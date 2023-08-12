@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summary Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+           
+        /* Apply background colors to different sections */
+        header {
+            background-color: chocolate; /* Light gray */
+            padding: 10px;
+        }
+        nav{
+            background-color: chocolate; /* Light gray */
+             
+        }
+        main {
+            background-color: brown; /* Light yellow */
+           
+            padding: 20px;
+        }
+        footer {
+            background-color: #d1ecf1; /* Light blue */
+            padding: 20px;
+        }
+    /* Apply styles to the header */
+header {
+    background-color: brown;
+    padding: 20px;
+    border-bottom: 1px solid chocolate;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Apply styles to the navigation bar */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: blueviolet
+}
+
+/* Apply styles to the h1 element */
+h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+/* Apply styles to the form */
+#summary-form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Apply styles to form inputs and labels */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Apply styles to the button */
+#show-summary-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#show-summary-btn:hover {
+    background-color: yellow;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar using Bootstrap Navbar component -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="FoodShow.html">Hermanos Chicken</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="FoodShow.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Booking.html">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AboutUs.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h1>Text Summary Example</h1>
+    
+    <form id="summary-form">
+        <div class="mb-3" >
+            <label for="input-text">Full Name:</label>
+            <input type="text" id="input-text" name="input-text">
+        </div>
+        <div class="mb-3" >
+            <label for="input-number">Number of Persons:</label>
+            <input type="range" id="input-number" name="input-number" min="1" max="10" step="1">
+            <output for="input-number" id="familySizeOutput">1</output>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="mb-3">
+            <label for="dinnerDate" class="form-label">Date for Dinner</label>
+            <input type="date" class="form-control" id="dinnerDate" name="dinnerDate" value="2023-08-12" required>
+        </div>
+        <div class="mb-3">
+            <label for="dinnerTime" class="form-label">Time for Dinner</label>
+            <input type="time" class="form-control" id="dinnerTime" name="dinnerTime" value="18:30" required>
+        </div>
+        <div class="mb-3">
+            <label for="tableType" class="form-label">Table Type</label>
+            <select class="form-select" id="tableType" name="tableType">
+                <option value="normal">Normal</option>
+                <option value="fancy">Fancy</option>
+                <option value="luxury">Luxury</option>
+            </select>
+        </div>
+       
+        <button type="button" id="show-summary-btn">Show Summary</button>
+    </form>
+    
+    
+    <div id="summary-container"></div>
+    <footer>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <p>Email: example@example.com</p>
+                    <p>Phone: +123456789</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Map</h3>
+                    <!-- You can embed a map iframe from a service like Google Maps here -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-71.1234567!3d42.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0DCsDA5JzUxLjgiTiA3MMKwNDInNDguOCJF!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>We are a company dedicated to providing top-notch services in the field of...</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+                const familySizeInput = document.getElementById('input-number');
+        const familySizeOutput = document.getElementById('familySizeOutput');
+
+        familySizeInput.addEventListener('input', function() {
+            familySizeOutput.textContent = familySizeInput.value;
+        });
+        const showSummaryBtn = document.getElementById('show-summary-btn');
+        const inputText = document.getElementById('input-text');
+        const inputNumber = document.getElementById('input-number');
+        const summaryContainer = document.getElementById('summary-container');
+        const TableType = document.getElementById('tableType');
+        const Email = document.getElementById('email');
+            const Phone = document.getElementById('phone');
+            const dinnerDate = document.getElementById('dinnerDate');
+            const dinnerTime = document.getElementById('dinnerTime');
+        
+        showSummaryBtn.addEventListener('click', () => {
+            const enteredText = inputText.value;
+            const enteredNumber  = inputNumber.value;
+            const enteredTableType = TableType.value;
+            const enteredEmail  = Email.value;
+            const enterPhone = Phone.value;
+            const summaryElement = document.createElement('p');
+            const enterdinnerDate  = dinnerDate.value;
+            const enterdinnerTime = dinnerTime.value
+            summaryElement.textContent = `Summary: ${enteredText} and number of people are ${enteredNumber} and the 
+            table choosen is ${enteredTableType}. 
+            Email is: ${enteredEmail} 
+            Phone Number is: ${enterPhone}
+            Date is: ${enterdinnerDate}
+            Time is: ${enterdinnerTime}
+            `
+
+            ;
+            
+            // Clear existing content
+            summaryContainer.innerHTML = '';
+            
+            // Append the summary
+            summaryContainer.appendChild(summaryElement);
+        });
+    </script>
+</body>
+</html>
